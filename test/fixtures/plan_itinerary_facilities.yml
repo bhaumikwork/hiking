@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facility_type: MyString
+  facility_description: MyText
+  plan_itinerary_id: 
+
+two:
+  facility_type: MyString
+  facility_description: MyText
+  plan_itinerary_id: 
