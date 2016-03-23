@@ -54,18 +54,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                <% @events.each do |e| %>
                   <tr class="odd gradeX">
-                    <td><a href="step1.html">Cascade Hut Return</a></td>
+                    <td><a href="<%= event_path(e) %>"><%= e.trip_name %></a></td>
                     <td>01-04-2016</td>
                     <td>04-04-2016</td>
                     <td class="center"><a href="#">Clone</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                   </tr>
-                  <tr class="odd gradeX">
-                    <td><a href="step1.html">Beyt Dwarka</a></td>
-                    <td>01-04-2016</td>
-                    <td>04-04-2016</td>
-                    <td class="center"><a href="#">Clone</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
-                  </tr>
+                <% end %>
                 </tbody>
               </table>
             </div>

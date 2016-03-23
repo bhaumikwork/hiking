@@ -1,0 +1,26 @@
+<div style="background-color: white">
+<h3>Basic information</h3>
+Name of the Trip/Hike : <%= @event.trip_name %><br>
+Short Description of Trip/Hike : <%= @event.trip_description %><br>
+Location : <%= @event.trip_location %><br>
+Contact Person : <%= @event.contact_person_name %><br>
+Contact Person Mobile Number : <%= @event.contact_person_mobile %><br>
+Contact Person Emailid : <%= @event.contact_person_email %><br>
+Start Date : <%= @event.start_date %><br>
+End Date : <%= @event.end_date %><br>
+Maximum Participant : <%= @event.max_participant %><br>
+<h3>Emergency information</h3>
+<%= @event.emergency_info.going_person_name %><br>
+<%= @event.emergency_info.contact_email %><br>
+<%= @event.emergency_info.start_location %><br>
+<%= @event.emergency_info.finish_location %><br>
+<%= @event.emergency_info.planned_route %><br>
+<%= @event.emergency_info.transportation %><br>
+<%= @event.emergency_info.expected_departure %><br>
+<%= @event.emergency_info.expected_return %><br>
+<%= @event.emergency_info.freak_out_time %><br>
+<%= @event.emergency_info.communications %><br>
+<%= @event.emergency_info.in_reach_map %><br>
+<%= @event.emergency_info.local_contact_email %><br>
+<%= @event.emergency_info.managing_agency %><br>
+</div>

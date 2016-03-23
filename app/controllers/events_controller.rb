@@ -53,6 +53,9 @@ class EventsController < ApplicationController
 		@picture_plan = @event.build_picture_plan
 	end
 
+	def show
+	end
+
 
 	private
 
@@ -69,6 +72,6 @@ class EventsController < ApplicationController
 	end
 
 	def set_event
-		@event = Event.find(params[:id])
+		@event = Event.includes(:emergency_info).find(params[:id])
 	end
 end
