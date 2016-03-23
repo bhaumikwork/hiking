@@ -61,6 +61,18 @@
         <label>Planning Resources:</label>
         <%= f.text_area :planning_resources, class: "form-control", rows: "3" %>
       </div>
+      <div class="form-group">
+        <label>Transport time to trailhead</label>
+        <%= f.text_area :transport_time_to_trailhead, class: "form-control", rows: "3" %>
+      </div>
+      <div class="form-group col-xs-6" style="padding-left: 0px;">
+          <label>Direction out</label>
+          <%= f.text_field :direction_out, class: "form-control" %>
+      </div>
+      <div class="form-group col-xs-6" style="padding-right: 0px;">
+          <label>Permits/Fees</label>
+          <%= f.datetime_field :fee, class: "form-control" %>
+      </div>
       <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;">
         <div class="form-group col-xs-5" style="padding-left: 0px;" >
           <label>Select Parameter which you want</label>
@@ -72,9 +84,6 @@
       <div class="col-xs-12" id="dynamic-container" style="padding-left: 0px;padding-right: 0px;">
         <div id="clonethis">
           <select class="form-control">
-            <option>Transport time to trailhead</option>
-            <option>Direction out</option>
-            <option>Permits/Fees</option>
             <option>Condition Cautions</option>
             <option>Animal Cautions</option>
             <option>Mosquito/fly issues</option>
@@ -84,6 +93,7 @@
             <option>Stove Fuel</option>
           </select>
         </div>
+        </div>
         <div class="form-group col-xs-5" >
           <input class="form-control txt" />
         </div>
@@ -91,61 +101,6 @@
       </div>
       <div class="col-xs-12" style="padding: 0px; text-align: right;">
           <button  type="submit" class="btn btn-primary">Save and goto Next Step</button>
-      </div>
-
-      <div class="form-group">
-        <label>Who's Going</label>
-        <%= f.text_field :going_person_name, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6"  style="padding-left: 0px;">
-        <label>Start Location</label>
-        <%= f.text_area :start_location, class: "form-control", rows: "3" %>
-      </div>
-      <div class="form-group col-xs-6"  style="padding-right: 0px;">
-        <label>Finish Location</label>
-        <label style="float: right;">
-            <input type="checkbox" value="" />Same as Start?
-        </label>
-        <%= f.text_area :finish_location, class: "form-control", rows: "3" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-left: 0px;">
-        <label>Planned Route</label>
-        <%= f.text_field :planned_route, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-right: 0px;">
-          <label>Transportation</label>
-          <%= f.text_field :transportation, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-left: 0px;">
-          <label>Expected Departure</label>
-          <%= f.datetime_field :expected_departure, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-right: 0px;">
-          <label>Expected Return</label>
-          <%= f.datetime_field :expected_return, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-left: 0px;">
-          <label>Freak Out Time</label>
-          <%= f.text_field :freak_out_time, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-right: 0px;">
-          <label>Communications</label>
-          <%= f.text_field :communications, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-left: 0px;">
-          <label>inReach Map</label>
-          <%= f.text_field :in_reach_map, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-right: 0px;">
-          <label>Local Contact</label>
-          <%= f.text_field :local_contact_email, class: "form-control" %>
-      </div>
-      <div class="form-group col-xs-6" style="padding-left: 0px;">
-          <label>Managing Agency</label>
-          <%= f.text_field :managing_agency, class: "form-control" %>
-      </div>
-      <div class="col-xs-12" style="padding: 0px; text-align: right;">
-        <button  type="submit" class="btn btn-primary">Save and goto Next Step</button>
       </div>
     <% end %>
     <%= render 'help_text' %>
