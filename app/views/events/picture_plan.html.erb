@@ -44,8 +44,8 @@
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2>Step 1 - Add Basic Information</h2>
-        <h5>Name of the Trip/Hike</h5>
+        <h2>Step 3 - Big Picture Planning</h2>
+        <h5>Trip Goals, Directions, Permits/Fees and etc.</h5>
       </div>
     </div>
     <!-- /. ROW  -->
@@ -81,24 +81,40 @@
           <label>Value of selected Parameter</label>
         </div>
       </div>
-      <div class="col-xs-12" id="dynamic-container" style="padding-left: 0px;padding-right: 0px;">
-        <div id="clonethis">
-          <select class="form-control">
-            <option>Condition Cautions</option>
-            <option>Animal Cautions</option>
-            <option>Mosquito/fly issues</option>
-            <option>Plant Cautions</option>
-            <option>Supermarket</option>
-            <option>Outdoors Store</option>
-            <option>Stove Fuel</option>
-          </select>
+      <%= f.nested_fields_for :facility_and_cautions, FacilityAndCaution.new do |fc| %>
+        <div class="col-xs-12" id="dynamic-container" style="padding-left: 0px;padding-right: 0px;">
+          <div class="form-group col-xs-5" style="padding-left: 0px;" >
+            <%= fc.select :type, options_for_select(["Condition Cautions", "Animal Cautions", "Mosquito/fly issues", "Plant Cautions", "Supermarket", "Outdoors Store", "Stove Fuel"]), {}, {class: "form-control"} %>
+          </div>
+          <div class="form-group col-xs-5" >
+            <%= fc.text_field :value, class: "form-control" %>
+          </div>
         </div>
+        <div class="form-group col-xs-2" >
+          <%= fc.remove_nested_fields_link 'Remove' %>
+        </div>
+      <% end %>
+      <%= f.add_nested_fields_link :facility_and_cautions, "Add" %>
+      <!-- <div class="col-xs-12" id="dynamic-container" style="padding-left: 0px;padding-right: 0px;">
+        <div id="clonethis">
+          <div class="form-group col-xs-5" style="padding-left: 0px;" >
+            <select class="form-control">
+              <option>Condition Cautions</option>
+              <option>Animal Cautions</option>
+              <option>Mosquito/fly issues</option>
+              <option>Plant Cautions</option>
+              <option>Supermarket</option>
+              <option>Outdoors Store</option>
+              <option>Stove Fuel</option>
+            </select>
+          </div>
         </div>
         <div class="form-group col-xs-5" >
           <input class="form-control txt" />
         </div>
+        <a href="javascript:addNewRow();" class="add btn btn-info btn-sm col-xs-2" >Add </a>
         <a href="javascript:void(0);" class="remove btn btn-danger btn-sm col-xs-2">Remove</a>
-      </div>
+      </div> -->
       <div class="col-xs-12" style="padding: 0px; text-align: right;">
           <button  type="submit" class="btn btn-primary">Save and goto Next Step</button>
       </div>
@@ -108,3 +124,31 @@
   <!-- /. PAGE INNER  -->
 </div>
 <!-- /. PAGE WRAPPER  -->
+<script type="text/javascript">
+  var index = 1;
+  $(document).ready(function(){
+      $(".remove").hide();
+
+  });
+  function addNewRow(){
+     $(".remove").show();
+     $(".add").hide();
+     var obj = $("#clonethis").clone().appendTo("#dynamic-container");
+     var newID = "clonethis_"+index;
+     obj.attr("id",newID);
+
+     $("#"+newID).find(".remove").hide();
+     $("#"+newID).find(".add").show();
+     $("#"+newID).find(".txt").val("");
+     index++;
+     $("#"+newID).find(".remove").click(function(){
+      alert("hi");
+          $("#"+newID).remove();
+     });
+  }
+</script>
+<style type="text/css">
+  fieldset {
+    width: 100%;
+  }
+</style>

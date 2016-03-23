@@ -38,16 +38,17 @@ class EventsController < ApplicationController
 	end
 
 	def save_picture_plan
-		@picture_plan = @event.build_picture_plan(event_params)
+		@picture_plan = @event.build_picture_plan(picture_plan_params)
 		if @picture_plan.save
 			respond_to do |format|
-	    	format.html { redirect_to picture_plan_event_path(@event), notice: "Picture Plan saved." }
+	    	format.html { redirect_to jh }
 	    	format.js
 	    end
 	  else
 	  	render 'picture_plan'
 		end
 	end
+
 
 	private
 
@@ -57,6 +58,10 @@ class EventsController < ApplicationController
 
 	def emergency_info_params
     params.require(:emergency_info).permit(:going_person_name, :start_location, :finish_location, :planned_route, :transportation, :expected_departure, :expected_return, :freak_out_time, :communications, :in_reach_map, :local_contact_email, :managing_agency)
+	end
+
+	def picture_plan_params
+    params.require(:picture_plan).permit(:trip_goal, :planning_resources, :transport_time_to_trailhead, :direction_out, :fee, facility_and_cautions_attributes:[:type, :value, :_destroy, :id])
 	end
 
 	def set_event
