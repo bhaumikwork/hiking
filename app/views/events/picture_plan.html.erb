@@ -20,10 +20,10 @@
       <li class="text-center">
         <img src="/assets/find_user.png" class="user-image img-responsive"/>
       </li>
-      <li><a class=""  href="step1.html">Step 1 - Add Basic Information</a></li>   
-      <li><a class=""  href="step2.html">Step 2 - Emergency Info</a></li>   
-      <li><a class="active-menu"  href="step3.html">Step 3 - Big Picture Planning</a></li> 
-      <li><a class=""  href="step4.html">Step 4 - Itinerary</a></li> 
+      <li><a class=""  href="<%= basic_info_events_path %>">Step 1 - Add Basic Information</a></li>   
+      <li><a class=""  href="<%= emergency_info_event_path(@event) %>">Step 2 - Emergency Info</a></li>   
+      <li><a class="active-menu"  href="<%= picture_plan_event_path(@event) %>">Step 3 - Big Picture Planning</a></li> 
+      <li><a class=""  href="<%= plan_itinerary_event_path(@event) %>">Step 4 - Itinerary</a></li> 
       <!--<li>
           <a href="step5.html">Step 5 - Itinerary<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
@@ -84,10 +84,10 @@
       <%= f.nested_fields_for :facility_and_cautions, FacilityAndCaution.new do |fc| %>
         <div class="col-xs-12" id="dynamic-container" style="padding-left: 0px;padding-right: 0px;">
           <div class="form-group col-xs-5" style="padding-left: 0px;" >
-            <%= fc.select :type, options_for_select(["Condition Cautions", "Animal Cautions", "Mosquito/fly issues", "Plant Cautions", "Supermarket", "Outdoors Store", "Stove Fuel"]), {}, {class: "form-control"} %>
+            <%= fc.select :fc_type, options_for_select(["Condition Cautions", "Animal Cautions", "Mosquito/fly issues", "Plant Cautions", "Supermarket", "Outdoors Store", "Stove Fuel"]), {}, {class: "form-control"} %>
           </div>
           <div class="form-group col-xs-5" >
-            <%= fc.text_field :value, class: "form-control" %>
+            <%= fc.text_field :fc_value, class: "form-control" %>
           </div>
         </div>
         <div class="form-group col-xs-2" >
@@ -124,29 +124,6 @@
   <!-- /. PAGE INNER  -->
 </div>
 <!-- /. PAGE WRAPPER  -->
-<script type="text/javascript">
-  var index = 1;
-  $(document).ready(function(){
-      $(".remove").hide();
-
-  });
-  function addNewRow(){
-     $(".remove").show();
-     $(".add").hide();
-     var obj = $("#clonethis").clone().appendTo("#dynamic-container");
-     var newID = "clonethis_"+index;
-     obj.attr("id",newID);
-
-     $("#"+newID).find(".remove").hide();
-     $("#"+newID).find(".add").show();
-     $("#"+newID).find(".txt").val("");
-     index++;
-     $("#"+newID).find(".remove").click(function(){
-      alert("hi");
-          $("#"+newID).remove();
-     });
-  }
-</script>
 <style type="text/css">
   fieldset {
     width: 100%;

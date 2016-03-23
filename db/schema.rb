@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20160323093048) do
   end
 
   create_table "facility_and_cautions", force: :cascade do |t|
-    t.string   "type"
-    t.string   "value"
+    t.string   "fc_type"
+    t.string   "fc_value"
     t.integer  "picture_plan_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

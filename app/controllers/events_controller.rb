@@ -41,12 +41,16 @@ class EventsController < ApplicationController
 		@picture_plan = @event.build_picture_plan(picture_plan_params)
 		if @picture_plan.save
 			respond_to do |format|
-	    	format.html { redirect_to jh }
+	    	format.html { redirect_to plan_itinerary_event_path(@event) }
 	    	format.js
 	    end
 	  else
 	  	render 'picture_plan'
 		end
+	end
+
+	def plan_itinerary
+		@picture_plan = @event.build_picture_plan
 	end
 
 
@@ -61,7 +65,7 @@ class EventsController < ApplicationController
 	end
 
 	def picture_plan_params
-    params.require(:picture_plan).permit(:trip_goal, :planning_resources, :transport_time_to_trailhead, :direction_out, :fee, facility_and_cautions_attributes:[:type, :value, :_destroy, :id])
+    params.require(:picture_plan).permit(:trip_goal, :planning_resources, :transport_time_to_trailhead, :direction_out, :fee, facility_and_cautions_attributes:[:fc_type, :fc_value, :_destroy, :id])
 	end
 
 	def set_event

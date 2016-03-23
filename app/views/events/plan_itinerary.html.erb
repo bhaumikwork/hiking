@@ -1,0 +1,258 @@
+<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="dashboard.html">Hiking Manager</a>
+  </div>
+  <a href="<%= root_path %>" class="btn btn-danger " style="margin-top: 13px; margin-left: 20px;">Back to Dashboard</a>
+  <div style="color: #fff; margin-top:0px; display: inline-block; ">Trip name : Cascade Hut Return</div>
+  <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">Welcome User &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+</nav>
+
+<!-- /. NAV TOP  -->
+<nav class="navbar-default navbar-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav" id="main-menu">
+      <li class="text-center">
+        <img src="/assets/find_user.png" class="user-image img-responsive"/>
+      </li>
+      <li><a class=""  href="<%= basic_info_events_path %>">Step 1 - Add Basic Information</a></li>
+      <li><a class=""  href="<%= emergency_info_event_path(@event) %>">Step 2 - Emergency Info</a></li>
+      <li><a class="active-menu"  href="<%= picture_plan_event_path(@event) %>">Step 3 - Big Picture Planning</a></li>
+      <li><a class=""  href="<%= plan_itinerary_event_path(@event) %>">Step 4 - Itinerary</a></li>
+      <!--<li>
+          <a href="step5.html">Step 5 - Itinerary<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+              <li><a href="step5_1.html">Day 1</a></li>
+              <li><a href="step5_2.html">Day 2</a></li>
+              <li><a href="step5_3.html">Day 3</a></li>
+          </ul>
+      </li>-->
+      <li><a class=""  href="step5.html">Step 5 - Gallery</a></li>
+      <li><a class=""  href="step6.html">Step 6 - Other Information</a></li>
+      <li><a class=""  href="step7.html">Step 7 - Review and Confirm</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- /. NAV SIDE  -->
+<div id="page-wrapper" >
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Step 4 - Planned Itinerary</h2>
+        <h5>Day wise detailed information</h5>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+
+    <form role="form" class="col-xs-8" action="step5.html">
+                 <div class="panel-body">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">Day 1/3 - 05 March</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label>Planned Start:</label>
+                                                <textarea class="form-control" rows="3"></textarea>                     
+                                            </div>
+                                            <div class="form-group" >
+                                                <label>Planned Finish:</label>
+                                                <textarea class="form-control" rows="3"></textarea>  
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label>Daylight</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label>Moonlight</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label>Water Availability</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label>Hammock trees</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label>Fishing</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label>Expected weather</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label>Geocache(s)</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">Day 2/3 - 06 March</a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapseTwo" class="panel-collapse collapse" style="height: auto;">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label>Planned Start:</label>
+                                                <textarea class="form-control" rows="3"></textarea>                     
+                                            </div>
+                                            <div class="form-group" >
+                                                <label>Planned Finish:</label>
+                                                <textarea class="form-control" rows="3"></textarea>  
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label>Daylight</label>
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Moonlight</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Water Availability</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Hammock trees</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Fishing</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Expected weather</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Geocache(s)</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">Day 3/3 - 07 March</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label>Planned Start:</label>
+                                                <textarea class="form-control" rows="3"></textarea>                     
+                                            </div>
+                                            <div class="form-group" >
+                                                <label>Planned Finish:</label>
+                                                <textarea class="form-control" rows="3"></textarea>  
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Daylight</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Moonlight</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Water Availability</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Hammock trees</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Fishing</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-right: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Expected weather</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                            <div class="form-group col-xs-6" style="padding-left: 0px;">
+                                                <label style="float: right;">
+                                                    <input type="checkbox" value="" />Same as Day 1?
+                                                </label> 
+                                                <label>Geocache(s)</label>
+                                                <input class="form-control" />                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                    <div class="col-xs-12" style="padding: 0px; text-align: right;">
+                        
+                        <button  type="submit" class="btn btn-primary">Save and goto Next Step</button>
+                    </div>
+                </form>
+    <%= render 'help_text' %>
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
+<!-- /. PAGE WRAPPER  -->
+<style type="text/css">
+  fieldset {
+    width: 100%;
+  }
+</style>

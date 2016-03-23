@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post 'save_emergency_info'
       get 'picture_plan'
       post 'save_picture_plan'
+      get 'plan_itinerary'
     end
   end
 
