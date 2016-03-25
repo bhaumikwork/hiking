@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323093048) do
+ActiveRecord::Schema.define(version: 20160325133457) do
 
   create_table "emergency_infos", force: :cascade do |t|
     t.string   "going_person_name"
@@ -78,8 +78,13 @@ ActiveRecord::Schema.define(version: 20160323093048) do
     t.string   "daylight"
     t.string   "moonlight"
     t.integer  "event_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "water_availability"
+    t.string   "hammock_trees"
+    t.string   "fishing"
+    t.string   "expected_weather"
+    t.string   "geocache"
   end
 
   add_index "plan_itineraries", ["event_id"], name: "index_plan_itineraries_on_event_id"

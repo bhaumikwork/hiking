@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       get 'picture_plan'
       post 'save_picture_plan'
       get 'plan_itinerary'
+      post 'save_plan_itinerary'
+      get 'gallery'
     end
   end
 
