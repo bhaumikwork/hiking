@@ -1,0 +1,30 @@
+<!-- /. NAV SIDE  -->
+<div id="page-wrapper" >
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-9">
+        <h2><%= @event.trip_name %></h2>
+          <h5><%= @event.trip_location %></h5>
+        </div>
+      <div class="col-md-3">
+        <h4><%= @event.start_date.strftime("%B %e-#{@event.end_date.strftime('%-e')}, %Y") %></h4>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <%= render 'show_gallery' %>
+    <hr />
+    <form role="form" class="col-xs-12" action="step7.html">
+        <%= render 'show_basic_info' %>
+        <%= render 'show_emergency_info' %>
+        <%= render 'show_picture_plan' %>
+        <%= render 'show_plan_itinerary' %>
+        <%= render 'show_other_info' %>
+        <div class="col-xs-12" style="padding: 0px; text-align: right;">
+<%= link_to "Print", "javascript:;", onclick: "window.print()", class: "btn btn-primary hidden-print" %>
+            <!-- <button  type="submit" class="btn btn-primary" onclick="window.print()" >Print</button> -->
+        </div>
+    </form>
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
+<!-- /. PAGE WRAPPER  -->

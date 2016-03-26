@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325133457) do
+ActiveRecord::Schema.define(version: 20160326054907) do
 
   create_table "emergency_infos", force: :cascade do |t|
     t.string   "going_person_name"
@@ -57,6 +57,26 @@ ActiveRecord::Schema.define(version: 20160325133457) do
   end
 
   add_index "facility_and_cautions", ["picture_plan_id"], name: "index_facility_and_cautions_on_picture_plan_id"
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "trip_image"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "galleries", ["event_id"], name: "index_galleries_on_event_id"
+
+  create_table "other_infos", force: :cascade do |t|
+    t.string   "post_trip"
+    t.string   "trip_note"
+    t.string   "trip_status"
+    t.integer  "event_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "other_infos", ["event_id"], name: "index_other_infos_on_event_id"
 
   create_table "picture_plans", force: :cascade do |t|
     t.text     "trip_goal"

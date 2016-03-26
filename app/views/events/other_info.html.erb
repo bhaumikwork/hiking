@@ -23,17 +23,9 @@
       <li><a class=""  href="<%= basic_info_events_path %>">Step 1 - Add Basic Information</a></li>
       <li><a class=""  href="<%= emergency_info_event_path(@event) %>">Step 2 - Emergency Info</a></li>
       <li><a class=""  href="<%= picture_plan_event_path(@event) %>">Step 3 - Big Picture Planning</a></li>
-      <li><a class="active-menu"  href="<%= plan_itinerary_event_path(@event) %>">Step 4 - Itinerary</a></li>
-      <!--<li>
-          <a href="step5.html">Step 5 - Itinerary<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-              <li><a href="step5_1.html">Day 1</a></li>
-              <li><a href="step5_2.html">Day 2</a></li>
-              <li><a href="step5_3.html">Day 3</a></li>
-          </ul>
-      </li>-->
-      <li><a class=""  href="step5.html">Step 5 - Gallery</a></li>
-      <li><a class=""  href="step6.html">Step 6 - Other Information</a></li>
+      <li><a class=""  href="<%= plan_itinerary_event_path(@event) %>">Step 4 - Itinerary</a></li>
+      <li><a class=""  href="<%= gallery_event_path(@event) %>">Step 5 - Gallery</a></li>
+      <li><a class="active-menu"  href="<%= other_info_event_path(@event) %>">Step 6 - Other Information</a></li>
       <li><a class=""  href="step7.html">Step 7 - Review and Confirm</a></li>
     </ul>
   </div>
@@ -44,32 +36,32 @@
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2>Step 4 - Planned Itinerary</h2>
-        <h5>Day wise detailed information</h5>
+        <h2>Step 6 - Other Information</h2>
+        <h5>Other required information for the prinout</h5>
       </div>
     </div>
     <!-- /. ROW  -->
     <hr />
 
-<%= form_for(@plan_itinerary, url: save_plan_itinerary_event_path(@event), html: {class: "col-xs-8"}) do |f| %>
-      <div class="panel-body">
-        <div class="panel-group" id="accordion">
-          <% @total_day_ary.each_with_index do |date, index| %>
-            <%= render 'plan_itinerary_form', f: f, date: date, index: index %>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-xs-12" style="padding: 0px; text-align: right;">
-          <button  type="submit" class="btn btn-primary" id="plan_itinerary_form">Save and goto Next Step</button>
-        </div>
+<%= form_for(@other_info, url: save_other_info_event_path(@event), html: {class: "col-xs-8"}) do |f| %>
+    <div class="form-group">
+      <label>Post Trip</label>
+      <%= f.text_field :post_trip, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Trip Notes For Next Time</label>
+      <%= f.text_field :trip_note, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Modify/Improve/Buy</label>
+      <%= f.text_field :trip_status, class: "form-control" %>
+    </div>
+    <div class="col-xs-12" style="padding: 0px; text-align: right;">
+      <button  type="submit" class="btn btn-primary">Save and goto Next Step</button>
+    </div>
 <% end %>
     <%= render 'help_text' %>
   </div>
   <!-- /. PAGE INNER  -->
 </div>
 <!-- /. PAGE WRAPPER  -->
-<style type="text/css">
-  fieldset {
-    width: 100%;
-  }
-</style>

@@ -59,7 +59,7 @@
                     <td><a href="<%= event_path(e) %>"><%= e.trip_name %></a></td>
                     <td>01-04-2016</td>
                     <td>04-04-2016</td>
-                    <td class="center"><a href="#">Clone</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+                    <td class="center"><a href="#">Clone</a> | <a href="<%= edit_basic_info_events_path(e) %>">Edit</a> | <a href="#">Delete</a></td>
                   </tr>
                 <% end %>
                 </tbody>

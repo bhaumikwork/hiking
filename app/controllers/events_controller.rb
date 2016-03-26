@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 	include ApplicationHelper
 	before_action :set_event, except: [:basic_info, :save_basic_info]
+	# before_action :set_sub_info, except: [:basic_info, :save_basic_info]
 
 	def basic_info
 		@event = Event.new
@@ -10,11 +11,25 @@ class EventsController < ApplicationController
 		@event = Event.new(event_params)
 		if @event.save
 			respond_to do |format|
-	    	format.html { redirect_to emergency_info_event_path(@event), notice: "Basic info saved." }
+	    	format.html { redirect_to emergency_info_event_path(@event) }
 	    	format.js
 	    end
 		else
 	  	render 'basic_info'
+		end
+	end
+
+	def edit_basic_info
+	end
+
+	def update_basic_info
+		if @event.update_attributes(event_params)
+			respond_to do |format|
+	    	format.html { redirect_to edit_emergency_info_event_path }
+	    	format.js
+	    end
+		else
+	  	render 'edit_basic_info'
 		end
 	end
 
@@ -26,7 +41,22 @@ class EventsController < ApplicationController
 		@emergency_info = @event.build_emergency_info(emergency_info_params)
 		if @emergency_info.save
 			respond_to do |format|
-	    	format.html { redirect_to picture_plan_event_path(@event), notice: "Imergency info saved." }
+	    	format.html { redirect_to picture_plan_event_path(@event) }
+	    	format.js
+	    end
+	  else
+	  	render 'emergency_info'
+		end
+	end
+
+	def edit_emergency_info
+		@emergency_info = @event.emergency_info
+	end
+
+	def update_emergency_info
+		if @emergency_info.update_attributes(emergency_info_params)
+			respond_to do |format|
+	    	format.html { redirect_to edit_picture_plan_event_path }
 	    	format.js
 	    end
 	  else
@@ -50,9 +80,13 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def edit_picture_plan
+		@picture_plan = @event.picture_plan
+	end
+
 	def plan_itinerary
 		@plan_itinerary = @event.plan_itineraries.new
-		@total_day = date_difference(@event.start_date, @event.end_date)
+		@total_day_ary = get_date_between(@event.start_date, @event.end_date)
 	end
 
 	def save_plan_itinerary
@@ -66,11 +100,57 @@ class EventsController < ApplicationController
 	    	format.js
 	    end
 	  else
-	  	render 'picture_plan'
+	  	render 'plan_itinerary'
 		end
 	end
 
 	def gallery
+		@gallery = @event.galleries.new
+	end
+
+	def save_gallery
+		success = params[:gallery].each_with_index do |p, i|
+			@gallery = @event.galleries.new(gallery_params(i))
+			@gallery.save
+		end
+		if success
+			respond_to do |format|
+	    	format.html { redirect_to other_info_event_path(@event) }
+	    	format.js
+	    end
+	  else
+	  	render 'gallery'
+		end
+	end
+
+	def other_info
+		@other_info = @event.build_other_info
+	end
+
+	def save_other_info
+		@other_info = @event.build_other_info(other_info_params)
+		if @other_info.save
+			respond_to do |format|
+	    	format.html { redirect_to review_info_event_path(@event) }
+	    	format.js
+	    end
+	  else
+	  	render 'other_info'
+		end
+	end
+
+	def review_info
+	end
+
+	def save_review_info
+		if params[:commit] == "Publish"
+			redirect_to publish_trip_event_path(@event)
+		else
+			redirect_to root_path
+		end
+	end
+
+	def publish_trip
 	end
 
 	def show
@@ -95,7 +175,19 @@ class EventsController < ApplicationController
     params[:plan_itinerary][i].permit(:hiking_day, :plan_start, :plan_finish, :daylight, :moonlight, :water_availability, :hammock_trees, :fishing, :expected_weather, :geocache)
 	end
 
-	def set_event
-		@event = Event.includes(:emergency_info).find(params[:id])
+	def gallery_params(i)
+    params[:gallery][i].permit(:trip_image)
 	end
+
+	def other_info_params
+    params.require(:other_info).permit(:post_trip, :trip_note, :trip_status)
+	end
+
+	def set_event
+		@event = Event.includes(:emergency_info).find_by(id: params[:id])
+	end
+
+	# def set_sub_info
+	# 	@sub_info = @event.vent.includes(:emergency_info).find_by(id: params[:id])
+	# end
 end

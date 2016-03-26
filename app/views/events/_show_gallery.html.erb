@@ -1,0 +1,6 @@
+<h1>Gallery</h1>
+<% @event.galleries.each do |image| %>
+  <div class="col-xs-4">
+      <img src="<%= image.trip_image %>" class="img-responsive">
+  </div>
+<% end %>

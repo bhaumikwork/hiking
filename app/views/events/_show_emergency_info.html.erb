@@ -1,0 +1,53 @@
+<h1>Emergency Information</h1>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Who's Going : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.going_person_name %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Contact(s) : </label>
+    <label class="col-sm-6"><%= @event.contact_person_email %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Start Location :</label>
+    <label class="col-sm-6"><%= @event.emergency_info.start_location.html_safe %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Finish Location : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.finish_location.html_safe %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Planned Route : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.planned_route %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Transportation : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.transportation %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Expected Departure : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.expected_departure.strftime("%A %B %d %Y") %><br>1900 Sydney Time</label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Expected Return : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.expected_return.strftime("%A %B %d %Y") %><br>1900 Sydney Time</label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Freak Out Time : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.freak_out_time %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Communications : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.communications %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">inReach Map : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.in_reach_map %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Local Contact : </label>
+    <label class="col-sm-6"><%= @event.emergency_info.local_contact_email %></label>
+</div>
+<div class="form-group">
+    <label class="col-sm-6" style="font-weight: normal;">Managing Agency:</label>
+    <label class="col-sm-6"><%= @event.emergency_info.managing_agency %></label>
+</div>

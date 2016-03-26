@@ -1,0 +1,39 @@
+<% @event.plan_itineraries.each_with_index do |pi, index| %>
+  <h1>Planned Itinerary - Day <%= index + 1 %>/<%= @event.plan_itineraries.count %> - <%= pi.hiking_day.strftime("%d %b") %></h1>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Planned Start :</label>
+      <label class="col-sm-6"><%= pi.plan_start %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Planned Finish :</label>
+      <label class="col-sm-6"><%= pi.plan_finish %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Daylight :</label>
+      <label class="col-sm-6"><%= pi.daylight %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Moonlight :</label>
+      <label class="col-sm-6"><%= pi.moonlight %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Water Availability : </label>
+      <label class="col-sm-6"><%= pi.water_availability %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Hammock trees : </label>
+      <label class="col-sm-6"><%= pi.hammock_trees %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Fishing : </label>
+      <label class="col-sm-6"><%= pi.fishing %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Expected weather : </label>
+      <label class="col-sm-6"><%= pi.expected_weather %></label>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-6" style="font-weight: normal;">Geocache(s):</label>
+      <label class="col-sm-6"><%= pi.geocache || "N/A" %></label>
+  </div>
+<% end %>

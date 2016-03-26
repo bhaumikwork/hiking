@@ -1,0 +1,106 @@
+<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="dashboard.html">Hiking Manager</a>
+  </div>
+  <a href="<%= root_path %>" class="btn btn-danger " style="margin-top: 13px; margin-left: 20px;">Back to Dashboard</a>
+  <div style="color: #fff; margin-top:0px; display: inline-block; ">Trip name : Cascade Hut Return</div>
+  <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">Welcome User &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+</nav>
+
+<!-- /. NAV TOP  -->
+<nav class="navbar-default navbar-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav" id="main-menu">
+      <li class="text-center">
+        <img src="/assets/find_user.png" class="user-image img-responsive"/>
+      </li>
+      <li><a class="active-menu"  href="<%= basic_info_events_path %>">Step 1 - Add Basic Information</a></li>   
+      <li><a class=""  href="#">Step 2 - Emergency Info</a></li>   
+      <li><a class=""  href="#">Step 3 - Big Picture Planning</a></li> 
+      <li><a class=""  href="#">Step 4 - Itinerary</a></li> 
+      <!--<li>
+          <a href="step5.html">Step 5 - Itinerary<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+              <li><a href="step5_1.html">Day 1</a></li>
+              <li><a href="step5_2.html">Day 2</a></li>
+              <li><a href="step5_3.html">Day 3</a></li>
+          </ul>
+      </li>-->
+      <li><a class=""  href="step5.html">Step 5 - Gallery</a></li>
+      <li><a class=""  href="step6.html">Step 6 - Other Information</a></li>
+      <li><a class=""  href="step7.html">Step 7 - Review and Confirm</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- /. NAV SIDE  -->
+<div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Step 1 - Add Basic Information</h2>
+          <h5>Name of the Trip/Hike</h5>
+        </div>
+      </div>
+      <!-- /. ROW  -->
+      <hr />
+
+      <%= form_for(@event, url: @event.new_record? ? save_basic_info_events_path : update_basic_info_events_path(@event), method: @event.new_record? ? :post : :put,html: {class: "col-xs-8"}) do |f| %>
+          <div class="form-group">
+              <label>Name of the Trip/Hike</label>
+              <%= f.text_field :trip_name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+              <label>Short Description of Trip/Hike</label>
+              <%= f.text_area :trip_description, class: "form-control", rows: "3" %>
+          </div>
+
+         <div class="form-group col-xs-6" style="padding-left: 0px;">
+            <label>Location</label>
+            <%= f.text_field :trip_location, class: "form-control" %>
+          </div>
+          <div class="form-group col-xs-6" style="padding-right: 0px;">
+              <label>Contact Person</label>
+              <%= f.text_field :contact_person_name, class: "form-control" %>
+          </div>
+          <div class="form-group col-xs-6" style="padding-left: 0px;">
+              <label>Contact Person Mobile Number</label>
+              <%= f.text_field :contact_person_mobile, class: "form-control" %>
+          </div>
+          <div class="form-group col-xs-6" style="padding-right: 0px;">
+              <label>Contact Person Emailid</label>
+              <%= f.email_field :contact_person_email, class: "form-control" %>
+          </div>
+          <div class="form-group col-xs-6" style="padding-left: 0px;">
+              <label>Start Date</label>
+              <%= f.text_field :start_date, class: "form-control" %>
+          </div>
+          <div class="form-group col-xs-6" style="padding-right: 0px;">
+              <label>End Date</label>
+              <label style="float: right;">
+                  <input type="checkbox" value="" />Single Day Event?
+              </label>
+              <%= f.text_field :end_date, class: "form-control" %>
+
+          </div>
+          <div class="form-group col-xs-6" style="padding-left: 0px;">
+              <label>Maximum Participant</label>
+              <%= f.text_field :max_participant, class: "form-control" %>
+          </div>
+          <div class="col-xs-12" style="padding: 0px; text-align: right;">
+              <button  type="submit" class="btn btn-primary">Save and goto Next Step</button>
+          </div>
+      <% end %>
+      <%= render 'help_text' %>
+    </div>
+    <!-- /. PAGE INNER  -->
+  </div>
+  <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->

@@ -9,15 +9,33 @@ Rails.application.routes.draw do
     collection do
       get 'basic_info'
       post 'save_basic_info'
+      get 'edit_basic_info/:id' => 'events#edit_basic_info', as: :edit_basic_info
+      put 'basic_info/:id' => 'events#update_basic_info', as: :update_basic_info
     end
     member do
       get 'emergency_info'
       post 'save_emergency_info'
+      get 'edit_emergency_info'
+      put 'emergency_info' => 'events#update_emergency_info', as: :update_emergency_info
       get 'picture_plan'
       post 'save_picture_plan'
+      get 'edit_picture_plan' => 'events#edit_picture_plan', as: :edit_picture_plan
+      put 'picture_plan' => 'events#update_picture_plan'
       get 'plan_itinerary'
       post 'save_plan_itinerary'
+      get 'edit_plan_itinerary' => 'events#edit_plan_itinerary', as: :edit_plan_itinerary
+      put 'plan_itinerary' => 'events#update_plan_itinerary'
       get 'gallery'
+      post 'save_gallery'
+      get 'edit_gallery' => 'events#edit_gallery', as: :edit_gallery
+      put 'gallery' => 'events#update_gallery'
+      get 'other_info'
+      post 'save_other_info'
+      get 'edit_other_info' => 'events#edit_other_info', as: :edit_other_info
+      put 'other_info' => 'events#update_other_info'
+      get 'review_info'
+      post 'save_review_info'
+      get 'publish_trip'
     end
   end
 

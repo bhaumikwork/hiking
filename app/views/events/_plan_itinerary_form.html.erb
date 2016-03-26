@@ -1,8 +1,9 @@
 <%#= form_for(@plan_itinerary, url: save_plan_itinerary_event_path(@event), html: {class: "col-xs-8"}) do |f| %>
+  <%= hidden_field_tag "plan_itinerary[][hiking_day]", value: date %>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" class="collapsed">Day <%= index + 1 %>/<%= @total_day %> - <%= (@event.start_date + index.day).strftime("%d %b") %></a>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" class="collapsed">Day <%= index + 1 %>/<%= @total_day_ary.count %> - <%= date.to_date.strftime("%d %b") %></a>
       </h4>
     </div>
     <div id="collapse<%= index %>" class="panel-collapse collapse" style="height: 0px;">
