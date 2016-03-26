@@ -51,7 +51,7 @@
     <!-- /. ROW  -->
     <hr />
 
-<%= form_for(@plan_itinerary, url: @plan_itinerary.count > 0 ? save_plan_itinerary_event_path : update_plan_itinerary_event_path, method: @plan_itinerary.count > 0 ? :post : :put, html: {class: "col-xs-8"}) do |f| %>
+<%= form_for(@plan_itinerary, url: @plan_itinerary.new_record? ? save_plan_itinerary_event_path : update_plan_itinerary_event_path, method: @plan_itinerary.new_record? ? :post : :put, html: {class: "col-xs-8"}) do |f| %>
       <div class="panel-body">
         <div class="panel-group" id="accordion">
           <% @total_day_ary.each_with_index do |date, index| %>
