@@ -1,0 +1,70 @@
+<%#= form_for(@plan_itinerary, url: save_plan_itinerary_event_path(@event), html: {class: "col-xs-8"}) do |f| %>
+  <%= hidden_field_tag "plan_itinerary[][hiking_day]", value: date %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" class="collapsed">Day <%= index + 1 %>/<%= @total_day_ary.count %> - <%= date.to_date.strftime("%d %b") %></a>
+      </h4>
+    </div>
+    <div id="collapse<%= index %>" class="panel-collapse collapse" style="height: 0px;">
+      <div class="panel-body">
+        <div class="form-group">
+            <label>Planned Start:</label>
+            <%= text_area_tag "plan_itinerary[][plan_start]", nil, class: "form-control", rows: "3" %>
+        </div>
+        <div class="form-group" >
+            <label>Planned Finish:</label>
+            <%= text_area_tag "plan_itinerary[][plan_finish]", nil, class: "form-control", rows: "3" %>
+        </div>
+        <div class="form-group col-xs-6" style="padding-left: 0px;">
+            <label>Daylight</label>
+            <%= text_field_tag "plan_itinerary[][daylight]", nil, class: "form-control" %>
+        </div>
+        <div class="form-group col-xs-6" style="padding-right: 0px;">
+            <label>Moonlight</label>
+            <%= text_field_tag "plan_itinerary[][moonlight]", nil, class: "form-control" %>
+        </div>
+        <div class="form-group col-xs-6" style="padding-left: 0px;">
+            <label>Water Availability</label>
+            <%= text_field_tag "plan_itinerary[][water_availability]", nil, class: "form-control" %>
+        </div>
+        <div class="form-group col-xs-6" style="padding-right: 0px;">
+            <label>Hammock trees</label>
+            <%= text_field_tag "plan_itinerary[][hammock_trees]", nil, class: "form-control" %>
+        </div>
+        <div class="form-group col-xs-6" style="padding-left: 0px;">
+            <label>Fishing</label>
+            <%= text_field_tag "plan_itinerary[][fishing]", nil, class: "form-control" %>
+        </div>
+        <div class="form-group col-xs-6" style="padding-right: 0px;">
+            <label>Expected weather</label>
+            <%= text_field_tag "plan_itinerary[][expected_weather]", nil, class: "form-control" %>
+        </div>
+        <div class="form-group col-xs-6" style="padding-left: 0px;">
+            <label>Geocache(s)</label>
+            <%= text_field_tag "plan_itinerary[][geocache]", nil, class: "form-control" %>
+        </div>
+        <!-- <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;">
+          <div class="form-group col-xs-5" style="padding-left: 0px;" >
+            <label>Select Parameter which you want</label>
+          </div>
+          <div class="form-group col-xs-5" >
+            <label>Value of selected Parameter</label>
+          </div>
+        </div>
+        <%#= f.nested_fields_for :plan_itinerary_facilities, PlanItineraryFacility.new do |pf| %>
+          <div class="form-group col-xs-5" style="padding-left: 0px;" >
+            <%#= pf.select :facility_type, options_for_select(["Water Availability", "Hammock trees", "Fishing", "Expected weather", "Geocache(s)"]), {}, {class: "form-control"} %>
+          </div>
+          <div class="form-group col-xs-5" >
+            <%#= pf.text_field :facility_description, class: "form-control" %>
+          </div>
+          <div class="form-group col-xs-2" >
+            <%#= pf.remove_nested_fields_link 'Remove' %>
+          </div>
+        <%# end %>
+        <%#= f.add_nested_fields_link :plan_itinerary_facilities, "Add" %> -->
+      </div>
+    </div>
+  </div>
+<%# end %>

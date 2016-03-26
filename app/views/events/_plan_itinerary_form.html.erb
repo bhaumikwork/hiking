@@ -1,70 +1,75 @@
-<%#= form_for(@plan_itinerary, url: save_plan_itinerary_event_path(@event), html: {class: "col-xs-8"}) do |f| %>
-  <%= hidden_field_tag "plan_itinerary[][hiking_day]", value: date %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" class="collapsed">Day <%= index + 1 %>/<%= @total_day_ary.count %> - <%= date.to_date.strftime("%d %b") %></a>
-      </h4>
-    </div>
-    <div id="collapse<%= index %>" class="panel-collapse collapse" style="height: 0px;">
-      <div class="panel-body">
-        <div class="form-group">
-            <label>Planned Start:</label>
-            <%= text_area_tag "plan_itinerary[][plan_start]", nil, class: "form-control", rows: "3" %>
-        </div>
-        <div class="form-group" >
-            <label>Planned Finish:</label>
-            <%= text_area_tag "plan_itinerary[][plan_finish]", nil, class: "form-control", rows: "3" %>
-        </div>
-        <div class="form-group col-xs-6" style="padding-left: 0px;">
-            <label>Daylight</label>
-            <%= text_field_tag "plan_itinerary[][daylight]", nil, class: "form-control" %>
-        </div>
-        <div class="form-group col-xs-6" style="padding-right: 0px;">
-            <label>Moonlight</label>
-            <%= text_field_tag "plan_itinerary[][moonlight]", nil, class: "form-control" %>
-        </div>
-        <div class="form-group col-xs-6" style="padding-left: 0px;">
-            <label>Water Availability</label>
-            <%= text_field_tag "plan_itinerary[][water_availability]", nil, class: "form-control" %>
-        </div>
-        <div class="form-group col-xs-6" style="padding-right: 0px;">
-            <label>Hammock trees</label>
-            <%= text_field_tag "plan_itinerary[][hammock_trees]", nil, class: "form-control" %>
-        </div>
-        <div class="form-group col-xs-6" style="padding-left: 0px;">
-            <label>Fishing</label>
-            <%= text_field_tag "plan_itinerary[][fishing]", nil, class: "form-control" %>
-        </div>
-        <div class="form-group col-xs-6" style="padding-right: 0px;">
-            <label>Expected weather</label>
-            <%= text_field_tag "plan_itinerary[][expected_weather]", nil, class: "form-control" %>
-        </div>
-        <div class="form-group col-xs-6" style="padding-left: 0px;">
-            <label>Geocache(s)</label>
-            <%= text_field_tag "plan_itinerary[][geocache]", nil, class: "form-control" %>
-        </div>
-        <!-- <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;">
-          <div class="form-group col-xs-5" style="padding-left: 0px;" >
-            <label>Select Parameter which you want</label>
-          </div>
-          <div class="form-group col-xs-5" >
-            <label>Value of selected Parameter</label>
-          </div>
-        </div>
-        <%#= f.nested_fields_for :plan_itinerary_facilities, PlanItineraryFacility.new do |pf| %>
-          <div class="form-group col-xs-5" style="padding-left: 0px;" >
-            <%#= pf.select :facility_type, options_for_select(["Water Availability", "Hammock trees", "Fishing", "Expected weather", "Geocache(s)"]), {}, {class: "form-control"} %>
-          </div>
-          <div class="form-group col-xs-5" >
-            <%#= pf.text_field :facility_description, class: "form-control" %>
-          </div>
-          <div class="form-group col-xs-2" >
-            <%#= pf.remove_nested_fields_link 'Remove' %>
-          </div>
-        <%# end %>
-        <%#= f.add_nested_fields_link :plan_itinerary_facilities, "Add" %> -->
+<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="dashboard.html">Hiking Manager</a>
+  </div>
+  <a href="<%= root_path %>" class="btn btn-danger " style="margin-top: 13px; margin-left: 20px;">Back to Dashboard</a>
+  <div style="color: #fff; margin-top:0px; display: inline-block; ">Trip name : Cascade Hut Return</div>
+  <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">Welcome User &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+</nav>
+
+<!-- /. NAV TOP  -->
+<nav class="navbar-default navbar-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav" id="main-menu">
+      <li class="text-center">
+        <img src="/assets/find_user.png" class="user-image img-responsive"/>
+      </li>
+      <li><a class=""  href="<%= basic_info_events_path %>">Step 1 - Add Basic Information</a></li>
+      <li><a class=""  href="<%= emergency_info_event_path(@event) %>">Step 2 - Emergency Info</a></li>
+      <li><a class=""  href="<%= picture_plan_event_path(@event) %>">Step 3 - Big Picture Planning</a></li>
+      <li><a class="active-menu"  href="<%= plan_itinerary_event_path(@event) %>">Step 4 - Itinerary</a></li>
+      <!--<li>
+          <a href="step5.html">Step 5 - Itinerary<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+              <li><a href="step5_1.html">Day 1</a></li>
+              <li><a href="step5_2.html">Day 2</a></li>
+              <li><a href="step5_3.html">Day 3</a></li>
+          </ul>
+      </li>-->
+      <li><a class=""  href="step5.html">Step 5 - Gallery</a></li>
+      <li><a class=""  href="step6.html">Step 6 - Other Information</a></li>
+      <li><a class=""  href="step7.html">Step 7 - Review and Confirm</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- /. NAV SIDE  -->
+<div id="page-wrapper" >
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Step 4 - Planned Itinerary</h2>
+        <h5>Day wise detailed information</h5>
       </div>
     </div>
+    <!-- /. ROW  -->
+    <hr />
+
+<%= form_for(@plan_itinerary, url: @plan_itinerary.count > 0 ? save_plan_itinerary_event_path : update_plan_itinerary_event_path, method: @plan_itinerary.count > 0 ? :post : :put, html: {class: "col-xs-8"}) do |f| %>
+      <div class="panel-body">
+        <div class="panel-group" id="accordion">
+          <% @total_day_ary.each_with_index do |date, index| %>
+            <%= render 'plan_itinerary_form_fields', f: f, date: date, index: index %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12" style="padding: 0px; text-align: right;">
+          <button  type="submit" class="btn btn-primary" id="plan_itinerary_form">Save and goto Next Step</button>
+        </div>
+<% end %>
+    <%= render 'help_text' %>
   </div>
-<%# end %>
+  <!-- /. PAGE INNER  -->
+</div>
+<!-- /. PAGE WRAPPER  -->
+<style type="text/css">
+  fieldset {
+    width: 100%;
+  }
+</style>

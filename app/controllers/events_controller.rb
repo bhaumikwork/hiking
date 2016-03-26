@@ -54,18 +54,20 @@ class EventsController < ApplicationController
 	end
 
 	def update_emergency_info
+		@emergency_info = @event.emergency_info
 		if @emergency_info.update_attributes(emergency_info_params)
 			respond_to do |format|
 	    	format.html { redirect_to edit_picture_plan_event_path }
 	    	format.js
 	    end
 	  else
-	  	render 'emergency_info'
+	  	render 'edit_emergency_info'
 		end
 	end
 
 	def picture_plan
 		@picture_plan = @event.build_picture_plan
+		@facility_caution = FacilityAndCaution.new
 	end
 
 	def save_picture_plan
@@ -82,6 +84,19 @@ class EventsController < ApplicationController
 
 	def edit_picture_plan
 		@picture_plan = @event.picture_plan
+		@facility_caution = @picture_plan.facility_and_cautions
+	end
+
+	def update_picture_plan
+		@picture_plan = @event.picture_plan
+		if @picture_plan.update_attributes(picture_plan_params)
+			respond_to do |format|
+	    	format.html { redirect_to edit_plan_itinerary_event_path }
+	    	format.js
+	    end
+	  else
+	  	render 'edit_picture_plan'
+		end
 	end
 
 	def plan_itinerary
@@ -102,6 +117,14 @@ class EventsController < ApplicationController
 	  else
 	  	render 'plan_itinerary'
 		end
+	end
+
+	def edit_plan_itinerary
+		@plan_itinerary = @event.plan_itineraries
+		@total_day_ary = get_date_between(@event.start_date, @event.end_date)
+	end
+
+	def update_plan_itinerary
 	end
 
 	def gallery
