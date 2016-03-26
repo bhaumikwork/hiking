@@ -1,5 +1,5 @@
 <% @event.plan_itineraries.each_with_index do |pi, index| %>
-  <h1>Planned Itinerary - Day <%= index + 1 %>/<%= @event.plan_itineraries.count %> - <%= pi.hiking_day.strftime("%d %b") %></h1>
+  <h1>Planned Itinerary - Day <%= index + 1 %>/<%= @event.plan_itineraries.count %> - <%= pi.hiking_day.strftime("%d %b") unless pi.hiking_day.nil? %></h1>
   <div class="form-group">
       <label class="col-sm-6" style="font-weight: normal;">Planned Start :</label>
       <label class="col-sm-6"><%= pi.plan_start %></label>

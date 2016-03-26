@@ -7,7 +7,7 @@
           <h5><%= @event.trip_location %></h5>
         </div>
       <div class="col-md-3">
-        <h4><%= @event.start_date.strftime("%B %e-#{@event.end_date.strftime('%-e')}, %Y") %></h4>
+        <h4><%= @event.start_date.strftime("%B %e-#{@event.end_date.strftime('%-e')}, %Y") unless @event.start_date.nil? %></h4>
       </div>
     </div>
     <!-- /. ROW  -->

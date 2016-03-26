@@ -25,11 +25,11 @@
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Expected Departure : </label>
-    <label class="col-sm-6"><%= @event.emergency_info.expected_departure.strftime("%A %B %d %Y") %><br>1900 Sydney Time</label>
+    <label class="col-sm-6"><%= @event.emergency_info.expected_departure.strftime("%A %B %d %Y") unless @event.emergency_info.expected_departure.nil? %><br>1900 Sydney Time</label>
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Expected Return : </label>
-    <label class="col-sm-6"><%= @event.emergency_info.expected_return.strftime("%A %B %d %Y") %><br>1900 Sydney Time</label>
+    <label class="col-sm-6"><%= @event.emergency_info.expected_return.strftime("%A %B %d %Y") unless @event.emergency_info.expected_return.nil? %><br>1900 Sydney Time</label>
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Freak Out Time : </label>
