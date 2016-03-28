@@ -1,6 +1,8 @@
-<h1>Gallery</h1>
-<% @event.galleries.each do |image| %>
-  <div class="col-xs-4">
-      <img src="<%= image.trip_image %>" class="img-responsive">
-  </div>
+<% if @event.galleries.select {|i| i.trip_image != ""}.count > 0 %>
+	<h1>Gallery</h1>
+	<% @event.galleries.each do |image| %>
+	  <div class="col-xs-4">
+	      <img src="<%= image.trip_image %>" class="img-responsive gallery_image">
+	  </div>
+	<% end %>
 <% end %>

@@ -1,0 +1,28 @@
+@media print {
+  #page-wrapper{
+  	margin: 0 0 0 0 !important;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .trip_name{
+  	color: #f00 !important;
+    -webkit-print-color-adjust: exact;
+    float: left;
+  }
+  .publish_form_date{
+  	float: right;
+  	margin-top: 0px;
+  }
+  .gallery_image{
+  	width: auto;
+    height: 150px;
+    max-width: auto;
+  }
+  .labelsdsd{
+  	float: left;
+  }
+  .value{
+  	float: right;
+  }
+}

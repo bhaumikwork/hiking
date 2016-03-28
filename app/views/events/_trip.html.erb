@@ -4,10 +4,10 @@
   <div id="page-inner">
     <div class="row">
       <div class="col-md-9">
-        <h2><%= @event.trip_name %></h2>
-          <h5><%= @event.trip_location %></h5>
-        </div>
-      <div class="col-md-3">
+        <h2 class="trip_name"><%= @event.trip_name %></h2>
+        <h5><%= @event.trip_location %></h5>
+      </div>
+      <div class="col-md-3 publish_form_date">
         <h4><%= @event.start_date.strftime("%B %e-#{@event.end_date.strftime('%-e')}, %Y") unless @event.start_date.nil? %></h4>
       </div>
     </div>
@@ -21,7 +21,7 @@
         <%= render 'show_plan_itinerary' %>
         <%= render 'show_other_info' %>
         <div class="col-xs-12" style="padding: 0px; text-align: right;">
-<%= link_to "Print", "javascript:;", onclick: "window.print()", class: "btn btn-primary hidden-print" %>
+          <%= link_to "Print", "javascript:;", onclick: "window.print()", class: "btn btn-primary hidden-print" %>
             <!-- <button  type="submit" class="btn btn-primary" onclick="window.print()" >Print</button> -->
         </div>
     </form>
