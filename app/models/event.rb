@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
 	def self.is_empty(value)
 		if value.present?
-			return value rescue ""
+			return value
 		else
 			return "<span style='padding-left: 20px;'>-</span>".html_safe
 		end
