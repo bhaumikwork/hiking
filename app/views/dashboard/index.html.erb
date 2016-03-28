@@ -61,7 +61,7 @@
                     <td><%= e.end_date.strftime("%d-%m-%Y") if e.end_date.present? %></td>
                     <td class="center">
                       <a href="#" onclick="alert('This feature is comming soon.')">Clone</a> |
-                      <a href="<%= edit_basic_info_events_path(e) %>">Edit</a> |
+                      <a href="<%#= edit_basic_info_events_path(e) %>" onclick="alert('This feature is comming soon.')">Edit</a> |
                       <%= link_to "Delete", event_path(e), method: :delete, data: {confirm: "Are you sure?"} %>
                     </td>
                   </tr>
