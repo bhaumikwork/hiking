@@ -17,7 +17,7 @@
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Condition Cautions : </label>
-    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Condition Cautions" }[0].try(:fc_value) || "None known" %></label>
+    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Condition Cautions" }[0].try(:fc_value) rescue nil || "None known" %></label>
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Animal Cautions : </label>
