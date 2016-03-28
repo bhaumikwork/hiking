@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       post 'save_basic_info'
       get 'edit_basic_info/:id' => 'events#edit_basic_info', as: :edit_basic_info
       put 'basic_info/:id' => 'events#update_basic_info', as: :update_basic_info
-      patch ':id/destroy_event' => 'events#destroy_event', as: :destroy_event
     end
     member do
       get 'emergency_info'

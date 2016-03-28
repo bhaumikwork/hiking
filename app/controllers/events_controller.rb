@@ -173,7 +173,7 @@ class EventsController < ApplicationController
 		end
 	end
 
-	def destroy_event
+	def destroy
 		if @event.destroy
 			redirect_to root_path, notice: "Record was deleted successfully."
 		else
