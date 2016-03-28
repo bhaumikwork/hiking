@@ -1,19 +1,19 @@
 <h1>Big Picture Planning</h1>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Trip Goals :</label>
-    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.trip_goal) %></label>
+    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.try(:trip_goal)) %></label>
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Transport time to trailhead:</label>
-    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.transport_time_to_trailhead) %></label>
+    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.try(:transport_time_to_trailhead)) %></label>
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Direction out :</label>
-    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.direction_out) %></label>
+    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.try(:direction_out)) %></label>
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Permits/Fees :</label>
-    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.fee) %></label>
+    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.try(:fee)) %></label>
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Condition Cautions : </label>
@@ -45,5 +45,5 @@
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Planning Resources :</label>
-    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.planning_resources) %></label>
+    <label class="col-sm-6"><%= Event.is_empty(@event.picture_plan.try(:planning_resources)) %></label>
 </div>
