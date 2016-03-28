@@ -1,13 +1,13 @@
 <h1>Other Information</h1>
 <div class="form-group">
   <label class="col-sm-6" style="font-weight: normal;">Post Trip:</label>
-  <label class="col-sm-6"><%= Event.is_empty(@event.other_info.post_trip) rescue {} %></label>
+  <label class="col-sm-6"><%= Event.is_empty(@event.other_info.post_trip) %></label>
 </div>
 <div class="form-group">
   <label class="col-sm-6" style="font-weight: normal;">Trip Notes For Next Time:</label>
-  <label class="col-sm-6"><%= Event.is_empty(@event.other_info.trip_note) rescue {} %></label>
+  <label class="col-sm-6"><%= Event.is_empty(@event.other_info.trip_note) %></label>
 </div>
 <div class="form-group">
   <label class="col-sm-6" style="font-weight: normal;">Modify/Improve/Buy:</label>
-  <label class="col-sm-6"><%= Event.is_empty(@event.other_info.trip_status) rescue {} %></label>
+  <label class="col-sm-6"><%= Event.is_empty(@event.other_info.trip_status) %></label>
 </div>
