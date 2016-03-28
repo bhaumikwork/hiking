@@ -21,27 +21,27 @@
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Animal Cautions : </label>
-    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Animal Cautions" }[0].try(:fc_value) || "None known" %></label>
+    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Animal Cautions" }[0].try(:fc_value) rescue nil || "None known" %></label>
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Mosquito/fly issues : </label>
-    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Mosquito/fly issues" }[0].try(:fc_value) || "None known" %></label>
+    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Mosquito/fly issues" }[0].try(:fc_value) rescue nil || "None known" %></label>
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Plant Cautions : </label>
-    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Plant Cautions" }[0].try(:fc_value) || "None known" %></label>
+    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Plant Cautions" }[0].try(:fc_value) rescue nil || "None known" %></label>
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Supermarket : </label>
-    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Supermarket" }[0].try(:fc_value) || "None known" %></label>
+    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Supermarket" }[0].try(:fc_value) rescue nil || "None known" %></label>
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Outdoors Store : </label>
-    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Outdoors Store" }[0].try(:fc_value) || "None known" %></label>
+    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Outdoors Store" }[0].try(:fc_value) rescue nil || "None known" %></label>
 </div>
 <div class="form-group publish_form">
     <label class="col-sm-6" style="font-weight: normal;">Stove Fuel :</label>
-    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Stove Fuel" }[0].try(:fc_value) || "None known" %></label>
+    <label class="col-sm-6"><%= @event.picture_plan.facility_and_cautions.select { |fc| fc.fc_type == "Stove Fuel" }[0].try(:fc_value) rescue nil || "None known" %></label>
 </div>
 <div class="form-group">
     <label class="col-sm-6" style="font-weight: normal;">Planning Resources :</label>
