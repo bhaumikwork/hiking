@@ -4,4 +4,13 @@ class Event < ActiveRecord::Base
 	has_many :plan_itineraries, dependent: :destroy
 	has_many :galleries, dependent: :destroy
 	has_one :other_info, dependent: :destroy
+
+
+	def self.is_empty(value)
+		if value.present?
+			return value rescue ""
+		else
+			return "<span style='padding-left: 20px;'>-</span>".html_safe
+		end
+	end
 end
