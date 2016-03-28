@@ -54,7 +54,7 @@
       <%= form_for(@event, url: @event.new_record? ? save_basic_info_events_path : update_basic_info_events_path(@event), method: @event.new_record? ? :post : :put,html: {class: "col-xs-8"}) do |f| %>
           <div class="form-group">
               <label>Name of the Trip/Hike</label>
-              <%= f.text_field :trip_name, class: "form-control" %>
+              <%= f.text_field :trip_name, class: "form-control", required: true %>
           </div>
           <div class="form-group">
               <label>Short Description of Trip/Hike</label>
@@ -79,14 +79,14 @@
           </div>
           <div class="form-group col-xs-6" style="padding-left: 0px;">
               <label>Start Date</label>
-              <%= f.text_field :start_date, class: "form-control" %>
+              <%= f.text_field :start_date, class: "form-control", required: true %>
           </div>
           <div class="form-group col-xs-6" style="padding-right: 0px;">
               <label>End Date</label>
               <label style="float: right;">
                   <input type="checkbox" value="" />Single Day Event?
               </label>
-              <%= f.text_field :end_date, class: "form-control" %>
+              <%= f.text_field :end_date, class: "form-control", required: true %>
 
           </div>
           <div class="form-group col-xs-6" style="padding-left: 0px;">

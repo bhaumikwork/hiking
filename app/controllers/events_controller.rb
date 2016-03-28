@@ -173,6 +173,14 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def destroy_event
+		if @event.destroy
+			redirect_to root_path, notice: "Record was deleted successfully."
+		else
+			redirect_to root_path, notice: "Something went wrong."
+		end
+	end
+
 	def publish_trip
 	end
 
