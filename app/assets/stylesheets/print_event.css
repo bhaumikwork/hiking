@@ -8,6 +8,8 @@
   .trip_name{
   	color: #f00 !important;
     -webkit-print-color-adjust: exact;
+  }
+  .trip{
     float: left;
   }
   .publish_form_date{
