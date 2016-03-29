@@ -187,6 +187,15 @@ class EventsController < ApplicationController
 	def show
 	end
 
+	def download_pdf
+		respond_to do |format|
+      format.pdf do
+        render :pdf         => 'download_pdf',
+               :page_size   => 'A4',
+               :layout => 'application.html'
+      end
+    end
+	end
 
 	private
 

@@ -1,0 +1,28 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<%= wicked_pdf_stylesheet_link_tag "bootstrap" %>
+<%= wicked_pdf_stylesheet_link_tag "custom" %>
+<%= wicked_pdf_stylesheet_link_tag "pdf" %>
+
+
+<div id="page-inner">
+  <div class="row">
+    <div class="col-md-9">
+      <h2><%= @event.trip_name %></h2>
+      <h5><%= @event.trip_location %></h5>
+    </div>
+    <div class="col-md-3">
+      <h4><%= @event.start_date.strftime("%B %e-#{@event.end_date.strftime('%-e')}, %Y") unless @event.start_date.nil? %></h4>
+    </div>
+  </div>
+  <%= render 'show_gallery.html.erb' %>
+  <hr />
+  <form role="form" class="col-xs-12" action="step7.html">
+    <%= render 'show_basic_info.html.erb' %>
+    <%= render 'show_emergency_info.html.erb' %>
+    <%= render 'show_picture_plan.html.erb' %>
+    <%= render 'show_plan_itinerary.html.erb' %>
+    <%= render 'show_other_info.html.erb' %>
+  </form>
+</div>
+

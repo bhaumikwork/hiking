@@ -1,4 +1,5 @@
-    <a href="<%= root_path %>" class="navbar-brand" style="margin-top: 13px; margin-left: 20px;"><< Back to Dashboard</a>
+<link rel="stylesheet" type="text/css" media="print" href="/assets/print_event.css">
+<a href="<%= root_path %>" class="navbar-brand" style="margin-top: 13px; margin-left: 20px;"><< Back to Dashboard</a>
 <!-- /. NAV SIDE  -->
 <div id="page-wrapper" >
   <div id="page-inner">
@@ -22,7 +23,9 @@
         <%= render 'show_other_info' %>
         <div class="col-xs-12" style="padding: 0px; text-align: right;">
           <%= link_to "Print", "javascript:;", onclick: "window.print()", class: "btn btn-primary hidden-print" %>
-            <!-- <button  type="submit" class="btn btn-primary" onclick="window.print()" >Print</button> -->
+          <%= link_to download_pdf_event_path(:format => :pdf), :target => '_blank', class: "btn btn-primary hidden-download" do %>
+            <span class="glyphicon glyphicon-download-alt "></span>Download
+          <% end %>
         </div>
     </form>
   </div>

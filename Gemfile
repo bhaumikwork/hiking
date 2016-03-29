@@ -52,3 +52,7 @@ end
 gem 'rails_12factor', group: :production
 gem 'nested_form_fields'
 
+# For generate PDF
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary-edge', '~> 0.12.3.0'
+

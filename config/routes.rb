@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       get 'review_info'
       post 'save_review_info'
       get 'publish_trip'
+      get 'download_pdf'
     end
   end
 
