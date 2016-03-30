@@ -15,4 +15,5 @@
  *= require custom
  *= require events
  *= require dataTables/dataTables.bootstrap
+ *= require bootstrap-datetimepicker
  */

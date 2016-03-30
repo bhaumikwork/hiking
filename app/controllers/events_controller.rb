@@ -8,6 +8,9 @@ class EventsController < ApplicationController
 	end
 
 	def save_basic_info
+		if params[:single_day]
+			params[:event]['end_date'] = params[:event]['start_date']
+		end
 		@event = Event.new(event_params)
 		if @event.save
 			respond_to do |format|

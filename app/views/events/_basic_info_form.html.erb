@@ -20,10 +20,10 @@
       <li class="text-center">
         <img src="/assets/find_user.png" class="user-image img-responsive"/>
       </li>
-      <li><a class="active-menu"  href="<%= basic_info_events_path %>">Step 1 - Add Basic Information</a></li>   
-      <li><a class=""  href="#">Step 2 - Emergency Info</a></li>   
-      <li><a class=""  href="#">Step 3 - Big Picture Planning</a></li> 
-      <li><a class=""  href="#">Step 4 - Itinerary</a></li> 
+      <li><a class="active-menu"  href="<%= basic_info_events_path %>">Step 1 - Add Basic Information</a></li>
+      <li><a class=""  href="#">Step 2 - Emergency Info</a></li>
+      <li><a class=""  href="#">Step 3 - Big Picture Planning</a></li>
+      <li><a class=""  href="#">Step 4 - Itinerary</a></li>
       <!--<li>
           <a href="step5.html">Step 5 - Itinerary<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
@@ -79,14 +79,14 @@
           </div>
           <div class="form-group col-xs-6" style="padding-left: 0px;">
               <label>Start Date</label>
-              <%= f.text_field :start_date, class: "form-control", required: true %>
+              <%= f.text_field :start_date, class: "form-control", required: true, id: 'start_date' %>
           </div>
           <div class="form-group col-xs-6" style="padding-right: 0px;">
               <label>End Date</label>
               <label style="float: right;">
-                  <input type="checkbox" value="" />Single Day Event?
+                  <input type="checkbox" name="single_day" value=true id="single_day" /> Single Day Event?
               </label>
-              <%= f.text_field :end_date, class: "form-control", required: true %>
+              <%= f.text_field :end_date, class: "form-control", required: true, id: 'end_date' %>
 
           </div>
           <div class="form-group col-xs-6" style="padding-left: 0px;">

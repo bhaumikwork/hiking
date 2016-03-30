@@ -25,7 +25,7 @@
 </div>
 <div class="form-group">
     <label class="col-xs-6" style="font-weight: normal;">Start Date : </label>
-    <label class="col-xs-6"><%= @event.start_date.strftime("#{@event.end_date.day.ordinalize} %B %Y") unless @event.start_date.nil? %></label>
+    <label class="col-xs-6"><%= @event.start_date.strftime("#{@event.start_date.day.ordinalize} %B %Y") unless @event.start_date.nil? %></label>
 </div>
 <div class="form-group">
     <label class="col-xs-6" style="font-weight: normal;">End Date : </label>

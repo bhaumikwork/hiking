@@ -43,6 +43,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap3-datetimepicker-rails (4.14.30)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (8.2.2)
     coderay (1.1.1)
@@ -75,6 +77,8 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    momentjs-rails (2.11.0)
+      railties (>= 3.1)
     multi_json (1.11.2)
     nested_form_fields (0.7.4)
       coffee-rails (>= 3.2.1)
@@ -160,10 +164,12 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap3-datetimepicker-rails (~> 4.14.30)
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (>= 2.9.0)
   nested_form_fields
   pg
   rails (= 4.2.6)

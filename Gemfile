@@ -56,3 +56,7 @@ gem 'nested_form_fields'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary-edge', '~> 0.12.3.0'
 
+# For datepicker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+
