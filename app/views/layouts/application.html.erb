@@ -11,7 +11,7 @@
 		<%= yield %>
 	</div>
   <script>
-    $(document).ready(function () {
+    $(document).on('ready page:load', function(){
         $('#dataTables-example').dataTable();
     });
   </script>

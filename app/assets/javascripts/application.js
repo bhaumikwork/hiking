@@ -13,7 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootbox.min
+//= require bootstrap.min
+//= require custom
+//= require events
+//= require jquery.metisMenu
+//= require dataTables/jquery.dataTables
+//= require dataTables/dataTables.bootstrap
 //= require nested_form_fields
 //= require moment
 //= require bootstrap-datetimepicker
-//= require_tree .
